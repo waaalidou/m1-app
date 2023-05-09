@@ -53,7 +53,6 @@ class _LogInPageState extends State<LogInPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FittedBox(
-                fit: BoxFit.contain,
                 child: Text(
                   "Welcom Home!",
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(

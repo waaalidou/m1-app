@@ -28,11 +28,6 @@ class AdminScreen extends StatelessWidget {
         ),
         itemCount: modulesList.length,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        child: const Icon(Icons.add),
-      ),
     );
   }
 }
