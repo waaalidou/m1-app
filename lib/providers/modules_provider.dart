@@ -65,4 +65,9 @@ class ModuleProvider with ChangeNotifier {
     _modules.add(module);
     notifyListeners();
   }
+
+  void deleteModule(String code) {
+    _modules.removeWhere((module) => module.code == code);
+    notifyListeners();
+  }
 }

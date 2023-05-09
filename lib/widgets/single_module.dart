@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:m1_idtw/providers/modules_provider.dart';
+import 'package:provider/provider.dart';
 
 class SingleModule extends StatelessWidget {
   final String name;
@@ -18,11 +20,19 @@ class SingleModule extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             backgroundColor: Theme.of(context).colorScheme.primary,
-            child: Text(code),
+            child: FittedBox(
+              child: Text(
+                code,
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
           ),
           title: Text(name),
           trailing: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Provider.of<ModuleProvider>(context, listen: false)
+                  .deleteModule(code);
+            },
             icon: Icon(
               Icons.delete,
               color: Theme.of(context).colorScheme.error,
